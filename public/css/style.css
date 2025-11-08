@@ -599,11 +599,13 @@ button:focus {
   overflow: hidden;
   width: 100%;
   min-height: 485px;
-  background: url(../img/banner/common-banner.png) no-repeat right bottom;
-  background-size: 90% 85%;
-  width: 98%;
+  background-image: url('../img/about-banner.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   z-index: 1;
 }
+
 
 @media (max-width: 1199px) {
   .banner_area .banner_inner {
@@ -3324,6 +3326,72 @@ h6 {
   right: 250px;
 }
 
+
+/* Soft gradient background for the section */
+.skills_area {
+  position: relative;
+  background: linear-gradient(135deg, #f9fbfd, #e7effc);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Decorative glowing background overlay */
+.skills_area .background-overlay {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.skills_area .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Skill cards */
+.skill-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hover effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon styling */
+.skill-card .icon i {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .icon i {
+  transform: scale(1.2);
+}
+
+/* Text */
+.skill-card h5 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.skill-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
 @media (max-width: 1480px) {
   .about_area .about_img {
     right: 0;
@@ -3338,6 +3406,26 @@ h6 {
 @media (max-width: 991px) {
   .about_area .about_img {
     display: none;
+  }
+}
+
+.skills_area {
+  background: linear-gradient(120deg, #f9fbfd, #e9f2ff, #f9fbfd);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
 
